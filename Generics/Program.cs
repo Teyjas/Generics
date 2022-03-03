@@ -9,4 +9,7 @@ TestCase.IntTest();
 // Test of max of float []
 Console.WriteLine("Float tests");
 TestCase.FloatTest();
+
+Console.WriteLine("String tests");
+TestCase.StringTest();
 Console.ReadLine();
