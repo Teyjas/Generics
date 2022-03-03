@@ -1,9 +1,13 @@
 ﻿namespace MaximumGenerics;
+
 internal static class TestCase
 {
     private static readonly int[] intTestCase1;
     private static readonly int[] intTestCase2;
     private static readonly int[] intTestCase3;
+    private static readonly float[] floatTestCase1;
+    private static readonly float[] floatTestCase2;
+    private static readonly float[] floatTestCase3;
 
     /// <summary>
     /// Initializes the <see cref="TestCase"/> class.
@@ -13,19 +17,43 @@ internal static class TestCase
         intTestCase1 = new int[] { 5, 3, 9 };
         intTestCase2 = new int[] { 0, 4, 3 };
         intTestCase3 = new int[] { 7, 5, 4 };
+        floatTestCase1 = new float[] { 1.3f, 2.5f, 5.7f };
+        floatTestCase2 = new float[] { 2.3f, 7.5f, 5.7f };
+        floatTestCase3 = new float[] { 9.3f, 8.5f, 5.7f };
     }
-
-    // Properties to get the test cases
-    public static int[] IntTestCase1 => intTestCase1;
-    public static int[] IntTestCase2 => intTestCase2;
-    public static int[] IntTestCase3 => intTestCase3;
 
     /// <summary>
     /// returns the specified test case as string.
     /// </summary>
     /// <returns>Test case values as string</returns>
-    public static string GetString<T>(T[] testCase)
+    private static string GetString<T>(T[] testCase)
     {
         return $"[{testCase[0]}, {testCase[1]}, {testCase[2]}]";
+    }
+
+    /// <summary>
+    /// Tests the max function for 3 int.
+    /// </summary>
+    public static void IntTest()
+    {
+        Console.WriteLine("Test case 1: " + GetString(intTestCase1));
+        Maximum.IntMax(intTestCase1[0], intTestCase1[1], intTestCase1[2]);
+        Console.WriteLine("Test case 2: " + GetString(intTestCase2));
+        Maximum.IntMax(intTestCase2[0], intTestCase2[1], intTestCase2[2]);
+        Console.WriteLine("Test case 3: " + GetString(intTestCase3));
+        Maximum.IntMax(intTestCase3[0], intTestCase3[1], intTestCase3[2]);
+    }
+
+    /// <summary>
+    /// Tests the max function for 3 float.
+    /// </summary>
+    public static void FloatTest()
+    {
+        Console.WriteLine("Test case 1: " + GetString(floatTestCase1));
+        Maximum.FloatMax(floatTestCase1[0], floatTestCase1[1], floatTestCase1[2]);
+        Console.WriteLine("Test case 2: " + GetString(floatTestCase2));
+        Maximum.FloatMax(floatTestCase2[0], floatTestCase2[1], floatTestCase2[2]);
+        Console.WriteLine("Test case 3: " + GetString(floatTestCase3));
+        Maximum.FloatMax(floatTestCase3[0], floatTestCase3[1], floatTestCase3[2]);
     }
 }
