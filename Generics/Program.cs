@@ -10,6 +10,7 @@ TestCase.IntTest();
 Console.WriteLine("Float tests");
 TestCase.FloatTest();
 
+// Test of max of string []
 Console.WriteLine("String tests");
 TestCase.StringTest();
 Console.ReadLine();
