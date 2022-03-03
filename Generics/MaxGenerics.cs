@@ -10,6 +10,12 @@ internal class Maximum<T> where T : IComparable
     {
         this.array = array;
         Array.Sort(array);
-        Console.WriteLine($"Max value is: {array[2]}");
+        PrintMax(array);
+    }
+    /// Prints the maximum.
+    /// </summary>
+    private void PrintMax(T[] value)
+    {
+        Console.WriteLine($"Max value is: {value[^1]}");
     }
 }
